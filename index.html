@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>merkliste</title>
+
+    <script src="js/twixl_core.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/twixl_list.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/json.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+
+    <meta charset="UTF-8">
+
+    <style type="text/css" media="screen">
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        th, td, p, div { font-size: 17pt; }
+        a { color: navy; text-decoration: none; }
+        #twixl-list .twixl-actions-online, #twixl-list .twixl-actions-offline { text-align: center; min-height: 44px; margin: 40px; }
+        p { margin: 0; padding: 20px 0; }
+        #twixl-list table { width:100%; border-collapse: collapse; border: 0; border-spacing: 0; }
+        #twixl-list td, #twixl-list th { border-bottom: 1px solid #CCC; padding: 8px 0; text-align: right; width: 15%; vertical-align: middle; height: 44px; }
+        #twixl-list tfoot { font-weight: bold; }
+        #twixl-list td.product, #twixl-list th.product { text-align: left; }
+        #twixl-empty-list, #twixl-place-order-progress, #twixl-order-finish { width: 100%; height: 100%; text-align: center; padding-top: 200px; }
+        input {
+            font-size: 17pt;
+            width: 100%;
+            border: 1px solid gray;
+            padding: 6px;
+            -webkit-border-radius: 0;
+            border-radius: 0;
+        }
+        #twixl-order-email.error {
+            border: 1px solid red;
+            background-color: #FFDDDD;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="twixl-list" class="twixl-list" style="display: none;">
+        <table>
+            <thead>
+                <tr>
+                    <th class="product">Produkte</th>
+                    <th class="actions"></th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            
+        </table>
+        <div class="twixl-actions-online">
+            <a href="" class="twixl-place-order">Senden</a>
+            <br>
+            <br>
+            <a href="" class="twixl-reset-list">Merkliste zurücksetzen</a>
+        </div>
+        <div class="twixl-actions-offline">
+            Keine Internetverbindung.
+            <br/>
+            <br/>
+            Eine Internetverbindung wird benötigt, für das Versenden der Produkte.
+        </div>
+    </div>
+
+    <div id="twixl-empty-list" class="twixl-list" style="display: none;">
+        Die Merkliste ist leer.
+    </div>
+
+
+    <div id="twixl-place-order-progress" class="twixl-list" style="display: none;">
+        Mail wird generiert.
+        <br/><br/>
+        Bitte warten...
+    </div>
+
+    <div id="twixl-order-finish" class="twixl-list" style="display: none;">
+        Das Mail wurde generiert!
+        <br/>
+        <br/>
+        <a href="" class="twixl-show-list">Zurück zur Merkliste</a>
+    </div>
+
+    <div id="twixl-list-product-button" class="twixl-list" style="display: none;">
+        <a href=""></a>
+    </div>
+    
+   <script type="text/javascript" charset="utf-8">
+        Zepto(function($){
+            TwixlList.init(
+                'merkliste'
+            );
+        });
+        
+    </script>
+    
+    
+
+</body>
+
+</html>
